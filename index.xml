@@ -2,7 +2,7 @@
 <!DOCTYPE catalogue SYSTEM "validationCatalogue.dtd">
 
 <catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="schema-catalogue.xsd">
+	xsi:noNamespaceSchemaLocation="./schemaCatalogue.xsd">
 
 	<!-- Centralisation des données "options" -->
 	<liste_options>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="catalogue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="liste_options" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="option" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="reference_option" type="xs:IDREF" use="required" />
+                      <xs:attribute name="prix" type="xs:integer" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="type_moteur">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="moteur" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="reference_moteur" type="xs:IDREF" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vehicules">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vehicule" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="type" type="xs:string" />
+                    <xs:element name="marque" type="xs:string" />
+                    <xs:element name="couleur" type="xs:string" />
+                    <xs:element name="prix" type="xs:int" />
+                    <xs:element name="moteur">
+                      <xs:complexType>
+                        <xs:attribute name="reference_moteur" type="xs:IDREF" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="options_disponibles">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="configuration" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="reference_option" type="xs:IDREF" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="reference_voiture" type="xs:ID" />
+                  <xs:attribute name="annee" type="xs:int" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
