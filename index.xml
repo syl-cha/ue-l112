@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE base SYSTEM "validation-catalogue.dtd">
+<!DOCTYPE catalogue SYSTEM "validationCatalogue.dtd">
 
-<cataloguexmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="schema-catalogue.xsd">
 
 	<!-- Centralisation des données "options" -->

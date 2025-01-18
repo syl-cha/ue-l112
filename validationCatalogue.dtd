@@ -1,0 +1,32 @@
+<!ELEMENT catalogue (liste_options,type_moteur,vehicules)>
+
+<!-- déclaration d'éléments externalisés -->
+<!ELEMENT liste_options (option+)>
+<!ELEMENT type_moteur (moteur+)>
+<!ELEMENT vehicules (vehicule+)>
+
+<!-- déclaration d'éléments -->
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option 
+  reference_option IDREF #REQUIRED
+  prix CDATA  #REQUIRED>
+
+<!ELEMENT moteur (#PCDATA)>
+<!ATTLIST moteur reference_moteur IDREFS #REQUIRED>
+
+<!ELEMENT vehicule (type,marque,couleur,prix,moteur,options_disponibles)>
+<!ATTLIST vehicule 
+  reference_voiture ID #REQUIRED
+  annee CDATA #REQUIRED>
+
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT marque (#PCDATA)>
+<!ELEMENT couleur (#PCDATA)>
+<!ELEMENT prix (#PCDATA)>
+<!ELEMENT moteur EMPTY>
+<!ATTLIST moteur reference_moteur IDREFS #REQUIRED>
+
+<!ELEMENT options_disponibles (configuration+)>
+<!ELEMENT configuration EMPTY>
+<!ATTLIST configuration 
+  reference_option IDREF #REQUIRED>
